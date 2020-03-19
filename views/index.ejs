@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Page Title</title>
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/milligram/1.3.0/milligram.css">
+      <link rel="stylesheet" href="styles.css" type="text/css" />
+    </head>
+    <body>
+        <h1>Hello</h1>
+        <h3>Here are your books</h3>
+        <a class="button" href="/add">Add another</a>
+        <% for(let id in books){%>
+        <center>
+            <div class="row">
+                <div class="columns">
+                    <figure>
+                        <img src= <%= books[id].imageURL %> alt="placeholder" height="150" width="150">
+                        <figcaption><%= books[id].title %></figcaption>
+                    </figure>
+                    <div class="row">
+                        <div class="column">
+                            <form action="/<%=id%>" method="get">
+                                <input type="submit" value ="view book" name="view book" class="button button-outline" id="title">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <form action="/delete/<%=id%>" method="post">
+                                <input type="submit" value="delete book" name="delete" class="button" id="title">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </center>
+        <% } %>
+    </body>
+</html>

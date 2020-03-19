@@ -11,7 +11,4 @@ class Book {
 
 Book.count = 0;
 
-module.exports = {
-  magicNumber: 100,
-  Book: Book
-};
+module.exports = Book

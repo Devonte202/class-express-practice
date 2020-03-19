@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= book.title%></title>
+    </head>
+    <body>
+       <center>
+            <div class="row">
+                <div class="columns">
+                    <h1><%= book.title %></h1>
+                    <figure>
+                        <img src= <%= book.imageURL %> alt="placeholder" height="350" width="350">
+                        <figcaption><%= book.description %></figcaption>
+                    </figure>
+                    <h4>Date created: <%= book.dateAdded %></h4>
+                </div>
+            </div>
+        </center>
+    </body>
+</html>
